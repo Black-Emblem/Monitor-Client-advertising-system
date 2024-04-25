@@ -25,6 +25,7 @@ public class dbconn {
                     String dbName = data[1];
                     USER = data[4];
                     PASS = data[5];
+                    System.out.println("jdbc:mariadb://" + ip + ":" + port + "/" + dbName);
 
                     DB_URL = "jdbc:mariadb://" + ip + ":" + port + "/" + dbName;
                 }

@@ -25,6 +25,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import static com.example.monitorclient.Internal.*;
+import static com.example.monitorclient.database.dbconn.initializeConn;
 import static com.example.monitorclient.database.dbf.getMonitorPosition;
 import static com.example.monitorclient.MonitorController.*;
 import static com.example.monitorclient.database.dbf.setMonitorPosition;
@@ -59,6 +60,8 @@ public class PopupController {
 
     @FXML
     public void initialize() {
+
+        initializeConn();
         //initialize datalist with default values
         String[] datalogs = getLastLogFromLogCSVFile();
         String[] data = getDatafile();

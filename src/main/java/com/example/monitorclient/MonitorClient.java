@@ -17,15 +17,15 @@ public class MonitorClient extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MonitorClient.class.getResource("monitorApp.fxml"));
         Parent root = fxmlLoader.load();
         stage.initStyle(StageStyle.UNDECORATED);
-        try {
-            Image image = new Image("logo.png");
-            if (image.isError()) {
-                throw new RuntimeException(image.exceptionProperty().toString());
-            }
-            stage.getIcons().add(image);
-        }
-        catch(RuntimeException re)
-        { System.out.println("Failed to load the Icon: " + re.getMessage()); }
+        //try {
+        //    Image image = new Image("logo.png");
+        //    if (image.isError()) {
+        //        throw new RuntimeException(image.exceptionProperty().toString());
+        //    }
+        //    stage.getIcons().add(image);
+        //}
+        //catch(RuntimeException re)
+        //{ System.out.println("Failed to load the Icon: " + re.getMessage()); }
         stage.setTitle("");
         //stage.setScene(new Scene(root, Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight()));
         stage.setScene(new Scene(root, 1080, 1920));
