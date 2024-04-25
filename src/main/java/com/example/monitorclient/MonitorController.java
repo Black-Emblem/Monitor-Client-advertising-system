@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
@@ -24,9 +23,12 @@ public class MonitorController {
 
     @FXML
     public void initialize() {
-        myWebView.sceneProperty().addListener(new ChangeListener<javafx.scene.Scene>() {
+
+
+
+        myWebView.sceneProperty().addListener(new ChangeListener<Scene>() {
             @Override
-            public void changed(ObservableValue<? extends javafx.scene.Scene> observable, javafx.scene.Scene oldValue, javafx.scene.Scene newValue) {
+            public void changed(ObservableValue<? extends Scene> observable, Scene oldValue, Scene newValue) {
                 if (newValue != null) {
                     newValue.getAccelerators().put(
                             new KeyCodeCombination(KeyCode.M, KeyCombination.CONTROL_DOWN),
@@ -48,12 +50,9 @@ public class MonitorController {
 
         WebEngine engine = myWebView.getEngine();
         engine.setUserStyleSheetLocation(Objects.requireNonNull(getClass().getResource("/hideScrollBar.css")).toExternalForm());
-        engine.load("https://nowrealestate.gr/property/6066");
+        engine.load("");
+
+
     }
-    @FXML
-    public void Forcedurl(String URL) {
-        WebEngine engine = myWebView.getEngine();
-        engine.setUserStyleSheetLocation(Objects.requireNonNull(getClass().getResource("/hideScrollBar.css")).toExternalForm());
-        engine.load(URL);
-    }
+
 }

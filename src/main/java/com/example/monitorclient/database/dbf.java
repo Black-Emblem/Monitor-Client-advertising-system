@@ -1,5 +1,6 @@
 package com.example.monitorclient.database;
 
+import java.lang.reflect.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +20,27 @@ public class dbf {
             return String.valueOf(rs.getInt("Current_listingID"));
         }
         return "-1";
+    }
+
+    public static String[] getMonitorPosition(int monitor_ID) throws SQLException
+    {
+        String sqlStr = "select monitor_row, monitor_column from monitors where monitor_ID = ?";
+        PreparedStatement ps = db_conn().prepareStatement(sqlStr);
+        ps.setInt(1, monitor_ID);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            return new String[]{String.valueOf(rs.getInt("monitor_row")), String.valueOf(rs.getInt("monitor_column"))};
+        }
+        return new String[0];
+    }
+
+    public static void setMonitorPosition(String monitor_ID, String row, String column) throws SQLException {
+        String sqlStr = "update monitors set monitor_row = ?, monitor_column = ? where monitor_ID = ?";
+        PreparedStatement ps = db_conn().prepareStatement(sqlStr);
+        ps.setInt(1, Integer.parseInt(row));
+        ps.setInt(2, Integer.parseInt(column));
+        ps.setInt(3, Integer.parseInt(monitor_ID));
+        ps.executeUpdate();
     }
 
     public static Boolean getMonitorState(int monitor_ID) throws SQLException

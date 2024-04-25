@@ -27,7 +27,8 @@ public class MonitorClient extends Application {
         catch(RuntimeException re)
         { System.out.println("Failed to load the Icon: " + re.getMessage()); }
         stage.setTitle("");
-        stage.setScene(new Scene(root, Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight()));
+        //stage.setScene(new Scene(root, Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight()));
+        stage.setScene(new Scene(root, 1080, 1920));
         stage.show();
     }
 
