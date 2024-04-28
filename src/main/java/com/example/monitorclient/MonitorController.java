@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+import static com.example.monitorclient.Internal.getForcedState;
+import static com.example.monitorclient.Internal.getForcedURL;
+
 public class MonitorController {
 
     @FXML
@@ -24,7 +27,7 @@ public class MonitorController {
     @FXML
     public void initialize() {
 
-
+        String url = null;
 
         myWebView.sceneProperty().addListener(new ChangeListener<Scene>() {
             @Override
@@ -48,10 +51,15 @@ public class MonitorController {
             }
         });
 
-        WebEngine engine = myWebView.getEngine();
-        engine.setUserStyleSheetLocation(Objects.requireNonNull(getClass().getResource("/hideScrollBar.css")).toExternalForm());
-        engine.load("");
+        if (getForcedState()){
+            url = getForcedURL();
+            WebEngine engine = myWebView.getEngine();
+            engine.setUserStyleSheetLocation(Objects.requireNonNull(getClass().getResource("/hideScrollBar.css")).toExternalForm());
+            engine.load(url);
+        }
+        else {
 
+        }
 
     }
 

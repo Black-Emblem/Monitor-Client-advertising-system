@@ -12,12 +12,12 @@
       <Line endX="290.5" layoutX="310.0" layoutY="294.0" startX="-99.5" />
       <Line endX="290.5" layoutX="310.0" layoutY="116.0" startX="-99.5" />
       <ListView fx:id="dataLIst" editable="true" prefHeight="355.0" prefWidth="209.0" />
-      <TextField fx:id="url_field" layoutX="215.0" layoutY="369.0" prefHeight="25.0" prefWidth="310.0" promptText="Enter full url  !!CAUTION THIS WILL STOP ANY AUTOMATED FUNCTION!!">
+      <TextField fx:id="url_filed" layoutX="215.0" layoutY="369.0" prefHeight="25.0" prefWidth="310.0" promptText="Enter full url  !!CAUTION THIS WILL STOP ANY AUTOMATED FUNCTION!!">
          <font>
             <Font size="9.0" />
          </font></TextField>
       <TextField fx:id="mrw_filed" layoutX="232.0" layoutY="22.0" prefHeight="25.0" prefWidth="149.0" promptText="monitor_row" />
-      <TextField fx:id="url_filed" layoutX="416.0" layoutY="22.0" promptText="monitor_ID" />
+      <TextField fx:id="mid_filed" layoutX="416.0" layoutY="22.0" promptText="monitor_ID" />
       <TextField fx:id="mcol_filed" layoutX="232.0" layoutY="68.0" promptText="monitor_column" />
       <TextField fx:id="port" layoutX="232.0" layoutY="201.0" prefHeight="25.0" prefWidth="149.0" promptText="3306" />
       <TextField fx:id="password" layoutX="416.0" layoutY="201.0" />

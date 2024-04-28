@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static com.example.monitorclient.Internal.*;
@@ -61,7 +62,6 @@ public class PopupController {
     @FXML
     public void initialize() {
 
-        initializeConn();
         //initialize datalist with default values
         String[] datalogs = getLastLogFromLogCSVFile();
         String[] data = getDatafile();
@@ -74,7 +74,6 @@ public class PopupController {
                 "Current's advert view time: "+ datalogs[6],
                 "Total Views: " + datalogs[7]
         ));
-
 
         mid_filed.setText(data[0]);
         dbname.setText(data[1]);
